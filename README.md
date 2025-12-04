@@ -30,14 +30,70 @@ Our application is tailored for providing details about laptops. The conversatio
 - npm (>=7.x)
 - Python (>=3.6)
 
-### Installation
+### Installation & Running
 
-1. Clone the repository:
+#### 1. Backend Setup (Flask)
+
+Navigate to the server directory:
 
 ```bash
-git clone https://github.com/your-username/llm-customer-care-assistant.git
+cd server
 ```
 
-## Built By
+Create a virtual environment (recommended):
 
-Jayesh Muley
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Set up environment variables:
+
+- Rename `.env.example` to `.env`
+- Add your API keys (OpenAI, Pinecone, etc.)
+
+Run the backend server:
+
+```bash
+python app.py
+```
+
+The server will start on `http://127.0.0.1:5000`.
+
+#### 2. Frontend Setup (Next.js)
+
+Open a new terminal and navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Environment Variables
+
+Ensure you have the following keys in your `server/.env` file:
+
+- `OPENAI_API_KEY`
+- `PINECONE_API_KEY`
+- `PINECONE_ENV`
+- `HUGGING_FACE_API_TOKEN`
+
